@@ -55,6 +55,8 @@ $config = [
                 'page' => 'site/page',
                 'ajax' => 'ajax/test',
                 'country' => 'country/index',
+                'test/<id:\d+>' => 'test/edit',
+
 
                 'login' => 'site/login',
                 'logout' => 'site/logout'

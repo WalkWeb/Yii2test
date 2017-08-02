@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "zountry".
@@ -11,9 +12,11 @@ use Yii;
  * @property string $name
  * @property int $population
  */
-class Zountry extends \yii\db\ActiveRecord
+class Zountry extends ActiveRecord
 {
     /**
+     * Указываем имя таблицы
+     *
      * @inheritdoc
      */
     public static function tableName()
@@ -22,6 +25,8 @@ class Zountry extends \yii\db\ActiveRecord
     }
 
     /**
+     * Требования к данным
+     *
      * @inheritdoc
      */
     public function rules()
@@ -35,6 +40,8 @@ class Zountry extends \yii\db\ActiveRecord
     }
 
     /**
+     * Метки атрибутов
+     *
      * @inheritdoc
      */
     public function attributeLabels()

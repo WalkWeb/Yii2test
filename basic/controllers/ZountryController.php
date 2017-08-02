@@ -15,6 +15,8 @@ use yii\filters\VerbFilter;
 class ZountryController extends Controller
 {
     /**
+     * Разрешенные типы запросов
+     *
      * @inheritdoc
      */
     public function behaviors()
@@ -30,7 +32,10 @@ class ZountryController extends Controller
     }
 
     /**
-     * Lists all Zountry models.
+     * Страница /zountry - показывает список элементов таблицы Zountry
+     *
+     * Вид - /view/zountry/index.php
+     *
      * @return mixed
      */
     public function actionIndex()
