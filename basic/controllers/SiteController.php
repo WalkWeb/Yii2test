@@ -131,6 +131,10 @@ class SiteController extends Controller
     }
 
 
+    public function actionPage()
+    {
+        return $this->render('page');
+    }
 
     public function actionSay($message = 'Привет')
     {

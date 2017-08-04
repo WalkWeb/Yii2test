@@ -4,6 +4,7 @@
 
 use yii\helpers\Html;
 use app\widgets\HelloWidget;
+use yii\widgets\ActiveForm;
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
@@ -15,11 +16,28 @@ $this->params['breadcrumbs'][] = $this->title;
         Test text to page
     </p>
 
+
+    <?php ActiveForm::begin([
+        'id' => 'comment-form',
+    ]); ?>
+
+    <?php HTML::activeHiddenInput(['asdasd']) ?>
+
+
+    <?php ActiveForm::end(); ?>
+
+
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
     <code><?= __FILE__ ?></code>
 
     <br /><br />
 
-    <?= HelloWidget::widget() ?>
+    <?= '<p>123123</p>';
+
+    //HelloWidget::widget(); ?>
 
 
 </div>
