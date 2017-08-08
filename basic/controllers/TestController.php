@@ -22,22 +22,21 @@ class TestController extends Controller
 
                 $model = $this->findModel($id);
 
+
                 if($model->load(Yii::$app->request->post()) && $model->save()) {
 
                     Yii::$app->session->setFlash('FormSubmitted');
-                    return $this->refresh();
                 }
 
             // Если тип запроса 1 - значит это добавление новой записи
             } elseif ($_POST['Test']['type'] == 1) {
 
                 $model = new Test();
-                $model->save();
+                if($model->load(Yii::$app->request->post()) && $model->save()) {
 
-                echo '<pre>';
-                var_dump($model->getErrors());
-                echo '</pre>';
-                die;
+                    Yii::$app->session->setFlash('FormSubmitted');
+
+                }
 
             // Иначе пришли неверные данные
             } else {

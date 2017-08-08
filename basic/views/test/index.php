@@ -4,9 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
 
+$this->title = 'Список элементов';
+$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 
-<h1>Список элементов</h1>
+<h1><?= Html::encode($this->title) ?></h1>
+
+<?php Pjax::begin() ?>
 
 <table border="1" style="width: 100%;">
     <tr>
@@ -39,7 +44,7 @@ use yii\widgets\Pjax;
         </tr>
         <tr>
             <td>
-                <?php $form = ActiveForm::begin(); ?>
+                <?php $form = ActiveForm::begin(['options' => ['data' => ['pjax' => 0]]]); ?>
 
                 <?= $form->field($test, 'name')->textInput(['maxlength' => true]) ?>
             </td>
@@ -63,11 +68,10 @@ use yii\widgets\Pjax;
         </tr>
     <?php endforeach; ?>
 </table>
-<br /><br /><br />
 
 <h2>Добавить новую запись</h2>
 
-<?php $form = ActiveForm::begin(); ?>
+<?php $form = ActiveForm::begin(['options' => ['data' => ['pjax' => true]]]); ?>
 
 <?= $form->field($test, 'code')->textInput(['maxlength' => true, 'value'=>false]) ?>
 
@@ -78,11 +82,9 @@ use yii\widgets\Pjax;
 <?= '<input type="hidden" name="Test[type]" value="1" />' ?>
 
 <div class="form-group">
-    <?= Html::submitButton('Добавить', ['class' => 'btn btn-success']) ?>
+    <?= Html::submitButton('Добавить', ['class' => 'btn btn-success', 'data-pjax'=>'1']) ?>
 </div>
 
 <?php ActiveForm::end(); ?>
 
-
-
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<?php Pjax::end() ?>
