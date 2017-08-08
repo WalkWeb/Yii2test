@@ -18,8 +18,15 @@ use yii\widgets\Pjax;
 
 <?php endif; ?>
 
+<?
+    echo '<pre>';
+    var_dump($test);
+    echo '</pre>';
+?>
 
-<?php $form = ActiveForm::begin(); ?>
+
+
+<?php $form = ActiveForm::begin(['action'=>'/test/']); ?>
 
 <?= $form->field($test, 'code')->textInput(['maxlength' => true]) ?>
 
