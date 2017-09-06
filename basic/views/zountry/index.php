@@ -29,6 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'population',
             'id',
+            [
+                'attribute' => 'imageFile',
+                'format' => 'html',
+                'value' => function($data) {
+                    return '<img src="/uploads/'.$data->imageFile.'" width="200" alt="" />';
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

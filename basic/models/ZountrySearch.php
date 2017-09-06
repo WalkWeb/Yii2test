@@ -20,6 +20,7 @@ class ZountrySearch extends Zountry
         return [
             [['code', 'name'], 'safe'],
             [['population', 'id'], 'integer'],
+            [['imageFile'], 'string'],
         ];
     }
 
@@ -28,7 +29,6 @@ class ZountrySearch extends Zountry
      */
     public function scenarios()
     {
-        // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
@@ -43,8 +43,6 @@ class ZountrySearch extends Zountry
     {
         $query = Zountry::find();
 
-        // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -52,8 +50,6 @@ class ZountrySearch extends Zountry
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
             return $dataProvider;
         }
 

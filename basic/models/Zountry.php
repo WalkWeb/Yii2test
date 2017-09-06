@@ -36,20 +36,28 @@ class Zountry extends ActiveRecord
             [['population'], 'integer'],
             [['code'], 'string', 'max' => 2],
             [['name'], 'string', 'max' => 52],
+            [['imageFile'], 'file', 'extensions' => 'jpg, png, gif', 'maxSize' => 1000000],
         ];
     }
 
     /**
-     * Метки атрибутов
+     * Имена атрибутов
      *
      * @inheritdoc
      */
     public function attributeLabels()
     {
         return [
-            'code' => 'Code',
-            'name' => 'Name',
-            'population' => 'Population',
+            'id' => 'ID',
+            'code' => 'Код',
+            'name' => 'Имя',
+            'population' => 'Популяция',
+            'imageFile' => 'Логотип'
         ];
+    }
+
+    public function getRules()
+    {
+
     }
 }

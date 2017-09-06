@@ -3,14 +3,11 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Zountry */
-/* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="zountry-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
@@ -18,8 +15,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'population')->textInput() ?>
 
+    <img src="/uploads/<?= $model->imageFile ?>" alt="" /><br /><br />
+
+    <?= $form->field($model, 'imageFile')->fileInput()->label('Новый логотип') ?>
+
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Обновить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
