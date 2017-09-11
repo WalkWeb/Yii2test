@@ -19,13 +19,4 @@ $this->params['breadcrumbs'][] = 'Update';
         'model' => $model,
     ]) ?>
 
-
-    <br /><br /><br /><br /><br /><br />
-    <? ActiveForm::begin() ?>
-
-
-
-    <? ActiveForm::end() ?>
-    <br /><br /><br /><br /><br /><br />
-
 </div>

@@ -53,7 +53,6 @@ class ZountrySearch extends Zountry
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
             'population' => $this->population,
             'id' => $this->id,
