@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\ckeditor\CKEditor;
 
 ?>
 
@@ -11,7 +12,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <? /* $form->field($model, 'name')->textArea(['maxlength' => true]) */ ?>
+
+    <?= $form->field($model, 'name')->widget(CKEditor::className(),[
+        'editorOptions' => [
+            'preset' => 'basic',
+            'inline' => false,
+        ],
+    ]) ?>
 
     <?= $form->field($model, 'population')->textInput() ?>
 
