@@ -157,4 +157,44 @@ class SiteController extends Controller
             return $this->render('entry', ['model' => $model]);
         }
     }
+
+
+    public function actionTestajax()
+    {
+        if (Yii::$app->request->isAjax) {
+            //$a = Yii::$app->request->post();
+            //return $a['test'].'.ru';
+
+            return '{"success":"1","site":"ya.ru","city":"Москва","numbers":"50-100","orgs":"ООО"}';
+
+        }
+
+
+        return $this->render('testajax');
+    }
+
+    public function actionRet()
+    {
+        return 'Hello!';
+    }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

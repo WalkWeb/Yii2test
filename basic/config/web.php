@@ -52,6 +52,10 @@ $config = [
                 'ajax' => 'ajax/test',
                 'country' => 'country/index',
                 'test/<id:\d+>' => 'test/edit',
+                'testajax' => 'site/testajax',
+                'ret' => 'site/ret',
+
+
 
 
                 'login' => 'site/login',

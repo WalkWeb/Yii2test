@@ -19,26 +19,11 @@ class AjaxController extends Controller
             ->where(['code' => 'AU'])
             ->one();
 
-
-        /*
-        $country = (new Query())
-            ->from('country')
-            ->select(['name', 'population'])
-            ->where(['code' => 'AU'])
-            ->one();
-        */
         return $this->render('/site/ajax', [
             'country' => $country
         ]);
 
-
-
-
     }
-
-
-
-
 
 }
 
