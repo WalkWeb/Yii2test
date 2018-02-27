@@ -130,7 +130,6 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-
     public function actionPage()
     {
         return $this->render('page');
@@ -140,7 +139,6 @@ class SiteController extends Controller
     {
         return $this->render('say', ['message' => $message]);
     }
-
 
     public function actionEntry()
     {
@@ -157,7 +155,6 @@ class SiteController extends Controller
             return $this->render('entry', ['model' => $model]);
         }
     }
-
 
     public function actionTestajax()
     {
@@ -178,23 +175,34 @@ class SiteController extends Controller
         return 'Hello!';
     }
 
+    public function actionTestform()
+    {
+
+        if (Yii::$app->request->post('type') === 'check1') {
+
+            $partForm = '<p>Напишите страну:</p><input class="form-control" name="country">';
+
+            $partForm = str_replace('"', '\\"', $partForm);
+
+            return '{"success":"1","partForm":"'.$partForm.'"}';
+        }
+
+        if (Yii::$app->request->post()) {
+            echo '<pre>';
+            var_dump(Yii::$app->request->post());
+            echo '</pre>';
+            die;
+        }
+
+
+        return $this->render('testform');
+    }
+
+
+
+
+
+
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

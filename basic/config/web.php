@@ -39,12 +39,10 @@ $config = [
             ],
         ],
         'db' => $db,
-
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-
                 '/' => 'site/index',
                 'about' => 'site/about',
                 'contact' => 'site/contact',
@@ -54,19 +52,11 @@ $config = [
                 'test/<id:\d+>' => 'test/edit',
                 'testajax' => 'site/testajax',
                 'ret' => 'site/ret',
-
-
-
-
+                'testform' => 'site/testform',
                 'login' => 'site/login',
-                'logout' => 'site/logout'
-
-
-
-
+                'logout' => 'site/logout',
             ],
         ],
-
     ],
     'params' => $params,
 ];

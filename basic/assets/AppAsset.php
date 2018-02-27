@@ -20,7 +20,8 @@ class AppAsset extends AssetBundle
     public $css = [
     ];
     public $js = [
-        '/js/input.js'
+        '/js/input.js',
+        '/js/testform.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
