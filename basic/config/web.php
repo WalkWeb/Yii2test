@@ -55,6 +55,7 @@ $config = [
                 'testform' => 'site/testform',
                 'login' => 'site/login',
                 'logout' => 'site/logout',
+                'testgii' => 'testgii/index',
             ],
         ],
     ],

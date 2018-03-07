@@ -36,43 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php else: ?>
 
         <p>
-
-            <?php
-
-//            $name = '123name123';
-//
-//            $session = Yii::$app->session;
-//
-//            $req = Yii::$app->getRequest();
-//
-//
-//
-//
-//            echo '<p>$_SESSION</p><pre>';
-//
-//            var_dump(Yii::$app->request);
-//
-//            //var_dump($req);
-//
-//
-//
-//            echo '</pre>';
-
-            //$session->remove('name');
-
-            //$session->set('name', $name);
-
-//            echo '<p>Yii::$app->session</p><pre>';
-//            var_dump($session);
-//            echo '</pre>';
-//            echo '<p>$_SESSION</p><pre>';
-//            var_dump($_SESSION);
-//            echo '</pre>';
-
-
-
-            ?>
-
             If you have business inquiries or other questions, please fill out the following form to contact us.
             Thank you.
         </p>

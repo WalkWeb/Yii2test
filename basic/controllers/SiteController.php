@@ -62,6 +62,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
+//        echo '<pre>';
+//        var_dump(Yii::$app);
+//        echo '</pre>';
+//        die;
+
         return $this->render('index');
     }
 
@@ -104,6 +110,13 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+
+        echo '<pre>';
+        var_dump($this->view);
+        echo '</pre>';
+        die;
+
+
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -114,6 +127,9 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+
+
 
     /**
      * Displays about page.
